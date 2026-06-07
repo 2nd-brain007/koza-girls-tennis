@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=device-width, initial-scale=1.0">
+    <title>【コザ高女子テニス部】九州インターハイ遠征資金造成 支援・寄付特設LP</title>
+    <meta name="description" content="コザ高等学校女子テニス部の九州インターハイ遠征資金造成特設ページです。Tシャツ購入や寄付を通じて、選手たちの挑戦を支えてください。">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a5c36;
+            /* Koza Green (コザ高グリーン) */
+            --primary-light: #198754;
+            --primary-dark: #05341c;
+            --accent: #d97706;
+            /* Warm Gold */
+            --accent-hover: #b45309;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 8px;
+            --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 16px 40px -10px rgba(10, 92, 54, 0.12), 0 8px 24px -10px rgba(0, 0, 0, 0.06);
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+            background-color: var(--background);
+            color: var(--text-main);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: 20px;
+        }
+
+        /* 日本語テキストの自然な文節改行をサポート */
+        .hero-title,
+        .hero-desc,
+        .narrative-text,
+        .pas-desc,
+        .value-desc,
+        .modal-body p {
+            word-break: auto-phrase;
+            overflow-wrap: anywhere;
+        }
+
+        .pc-only {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .pc-only {
+                display: inline;
+            }
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 70px 16px 90px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.18);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            letter-spacing: 0.05em;
+        }
+
+        .hero-title {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 900;
+            font-size: 2.1rem;
+            line-height: 1.35;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            letter-spacing: -0.02em;
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 720px;
+            margin: -45px auto 40px;
+            padding: 0 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Sections inside LP */
+        .section-card {
+            background-color: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 24px 18px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .section-card {
+                padding: 45px 36px;
+            }
+        }
+
+        /* Typography & Headings */
+        .section-title {
+            font-size: 1.35rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 900;
+            border-left: 5px solid var(--primary);
+            padding-left: 12px;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        p.narrative-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        /* Progress Bar Section */
+        .progress-container {
+            background-color: #f1f5f9;
+            border-radius: var(--radius-sm);
+            height: 12px;
+            width: 100%;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+            height: 100%;
+            border-radius: var(--radius-sm);
+            width: 0%;
+            /* Start at 0% */
+            transition: width 1s ease-in-out;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-val {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--primary);
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* PAS Framework Highlights */
+        .pas-box {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border: 1px solid #fde68a;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .pas-item {
+            margin-bottom: 12px;
+        }
+
+        .pas-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .pas-tag {
+            background-color: var(--accent);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        .pas-desc {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #78350f;
+        }
+
+        /* Donation Value Visualization Grid */
+        .value-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        @media (min-width: 550px) {
+            .value-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .value-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            background-color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            border-color: var(--primary-light);
+            background-color: white;
+            transform: translateY(-2px);
+        }
+
+        .value-amount {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--primary);
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .value-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .value-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Support Detail Table info */
+        .遠征詳細 {
+            background: linear-gradient(135deg, #f0fdf4 0%, #fef3c7 100%);
+            border-left: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: 18px 0;
+            font-size: 0.85rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .遠征詳細 table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .遠征詳細 td {
+            padding: 6px 0;
+            color: var(--text-muted);
+            vertical-align: top;
+        }
+
+        .遠征詳細 td.label {
+            font-weight: 700;
+            color: var(--primary);
+            width: 80px;
+        }
+
+        /* Form Group Styles */
+        label.field-label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-main);
+            font-size: 0.9rem;
+        }
+
+        .required::after {
+            content: " *";
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        .input-control {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: #f8fafc;
+            color: var(--text-main);
+        }
+
+        .input-control:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            background-color: white;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+        }
+
+        /* Choice Grid */
+        .choice-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        @media (min-width: 480px) {
+            .choice-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .choice-grid.three-cols {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .choice-card {
+            border: 2px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 14px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            background-color: #f8fafc;
+            display: flex;
+            align-items: center;
+        }
+
+        .choice-card:hover {
+            border-color: var(--primary-light);
+            background-color: white;
+            transform: translateY(-1px);
+        }
+
+        .choice-card input[type="radio"],
+        .choice-card input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .choice-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            width: 100%;
+        }
+
+        .choice-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .choice-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .choice-card.selected {
+            border-color: var(--primary);
+            background-color: #eff6ff;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.04);
+        }
+
+        /* Dynamic Sections */
+        .dynamic-section {
+            display: none;
+            background-color: #f8fafc;
+            border-radius: var(--radius-md);
+            padding: 20px 14px;
+            margin: 20px 0;
+            border: 1px solid var(--border);
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        @media (min-width: 600px) {
+            .dynamic-section {
+                padding: 24px 20px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* T-shirt Custom Layout */
+        .tshirt-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .tshirt-layout {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+
+        .tshirt-preview {
+            width: 180px;
+            height: 180px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .tshirt-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tshirt-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            width: 100%;
+        }
+
+        .tshirt-size-card {
+            background-color: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .size-label {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--primary);
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .quantity-btn {
+            background-color: #f1f5f9;
+            border: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+        }
+
+        .quantity-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .quantity-val {
+            font-weight: 700;
+            font-size: 1.05rem;
+            width: 16px;
+            text-align: center;
+        }
+
+        /* Donation custom styles */
+        .donation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        @media (min-width: 550px) {
+            .donation-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        .donation-btn {
+            background-color: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 12px 4px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .donation-btn:hover {
+            border-color: var(--primary-light);
+            background-color: #eff6ff;
+        }
+
+        .donation-btn.selected {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        /* Total Amount Area */
+        .summary-card {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            opacity: 0.85;
+        }
+
+        .summary-row.total {
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            opacity: 1;
+            align-items: center;
+        }
+
+        .total-price {
+            font-size: 1.6rem;
+            color: #facc15;
+            /* Bright Gold */
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+        }
+
+        /* Voice of the Team */
+        .team-photo {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            margin-bottom: 20px;
+            background-color: #e2e8f0;
+            display: block;
+        }
+
+        .quote-mark {
+            font-size: 4rem;
+            color: var(--primary-light);
+            opacity: 0.15;
+            position: absolute;
+            top: 210px;
+            left: 20px;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .team-quote {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-main);
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+            padding: 0 10px;
+        }
+
+        .team-author {
+            display: block;
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 15px;
+            font-weight: 700;
+        }
+
+        /* Recommended Badge & Premium Banner */
+        .donation-btn-wrapper {
+            position: relative;
+        }
+
+        .badge-recommend {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ef4444;
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 12px;
+            white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .premium-banner {
+            background: linear-gradient(135deg, #fefce8 0%, #fef08a 100%);
+            border: 1px solid #fde047;
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .premium-banner-title {
+            color: #854d0e;
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .premium-banner-desc {
+            font-size: 0.8rem;
+            color: #713f12;
+            line-height: 1.5;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: var(--radius-md);
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 14px rgba(217, 119, 6, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(217, 119, 6, 0.35);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 16px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Modal styling */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .modal.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 500px;
+            padding: 24px 16px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: scale(0.96);
+            transition: var(--transition);
+            max-height: 94vh;
+            overflow-y: auto;
+        }
+
+        @media (min-width: 480px) {
+            .modal-content {
+                padding: 36px 28px;
+            }
+        }
+
+        .modal.open .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .modal-icon {
+            font-size: 2.5rem;
+            color: var(--success);
+            margin-bottom: 6px;
+        }
+
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .modal-body {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .close-modal-btn {
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .close-modal-btn:hover {
+            background-color: var(--primary-light);
+        }
+
+        /* Payment Cards for Modal (Optimized for Mobile) */
+        .payment-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 18px 0;
+        }
+
+        .payment-card {
+            background-color: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .payment-card-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 6px;
+        }
+
+        .payment-icon {
+            font-size: 1.1rem;
+        }
+
+        .payment-title {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.85rem;
+        }
+
+        .payment-card-body {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            line-height: 1.45;
+            word-break: break-all;
+        }
+
+        .payment-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        @media (min-width: 480px) {
+            .payment-actions {
+                flex-direction: row;
+            }
+
+            .payment-actions .action-copy-btn.half {
+                flex: 1;
+            }
+
+            .payment-actions .paypay-app-btn {
+                flex: 1.5;
+            }
+        }
+
+        /* Redesigned Large Tap Target Action Buttons */
+        .action-copy-btn {
+            background-color: white;
+            color: var(--primary);
+            border: 1px solid var(--primary-light);
+            padding: 10px 14px;
+            border-radius: var(--radius-md);
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: var(--transition);
+            width: 100%;
+        }
+
+        .action-copy-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .action-copy-btn.copied {
+            background-color: var(--success);
+            color: white;
+            border-color: var(--success);
+        }
+
+        .paypay-app-btn {
+            background: linear-gradient(135deg, #ff0033 0%, #ff5e62 100%);
+            color: white !important;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            box-shadow: 0 4px 8px rgba(255, 0, 51, 0.15);
+            transition: var(--transition);
+            text-align: center;
+            width: 100%;
+        }
+
+        .paypay-app-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px rgba(255, 0, 51, 0.22);
+        }
+
+        .payment-notice {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: -2px;
+        }
+
+        /* Amount Card */
+        .payment-card.amount-card {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-color: #bfdbfe;
+            align-items: center;
+            text-align: center;
+            padding: 16px;
+        }
+
+        .amount-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .amount-value {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--accent-hover);
+            font-family: 'Outfit', sans-serif;
+            margin: 2px 0;
+        }
+
+        .nobrk {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Hero Section -->
+    <header class="hero">
+        <div class="hero-container">
+            <span class="badge">令和8年度 九州インターハイ出場決定</span>
+            <h1 class="hero-title">
+                <span class="nobrk">夢の舞台へ、</span><span class="nobrk">もう一度。</span><br class="pc-only">
+                <span class="nobrk">コザ高女子テニス部へ</span><span class="nobrk">遠征資金の</span><span
+                    class="nobrk">ご支援を</span><span class="nobrk">お願いします</span>
+            </h1>
+            <p class="hero-desc">
+                <span class="nobrk">選手たちの</span>「挑戦したい」という<span class="nobrk">真っ直ぐな気持ちを、</span><span
+                    class="nobrk">費用の問題で</span><span class="nobrk">諦めさせたくない。</span><br class="pc-only">
+                <span class="nobrk">Tシャツの購入と</span><span class="nobrk">寄付を通じた、</span><span
+                    class="nobrk">遠征資金造成への</span><span class="nobrk">ご協力をお願いいたします。</span>
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="container">
+
+        <!-- Section 1: Progress Tracker -->
+        <section class="section-card">
+            <h2 class="section-title">📊 遠征支援プロジェクトの進捗</h2>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-val">0円</span>
+                    <span class="stat-label">現在の支援総額</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-val">0 %</span>
+                    <span class="stat-label">達成率 (目標: 100万円)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-val">0 人</span>
+                    <span class="stat-label">サポーター数</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Project Background & PAS Framework -->
+        <section class="section-card">
+            <h2 class="section-title">📢 資金造成プロジェクトの背景</h2>
+            <p class="narrative-text">
+                いつも<span class="nobrk">コザ高等学校</span><span class="nobrk">女子テニス部を</span>温かく支えていただき、誠にありがとうございます。
+            </p>
+            <p class="narrative-text">
+                令和8年度<span
+                    class="nobrk">沖縄県インターハイ予選</span>において、部員たちの一球にかけるひたむきな努力が実を結び、見事<strong>準優勝</strong>を勝ち取りました！これにより、長崎県で開催される「九州インターハイ」への出場が決定いたしました。
+            </p>
+
+            <!-- PAS Framework Highlights for Emotional Connection -->
+            <div class="pas-box">
+                <div class="pas-item">
+                    <span class="pas-tag">現在の課題 (Problem)</span>
+                    <p class="pas-desc">今年度からPTA会費の不足等の影響で、部活動への公式な遠征資金援助が受けられなくなりました。その結果、選手個人の遠征負担額が昨年に比べ大幅に増加しています。
+                    </p>
+                </div>
+                <div class="pas-item" style="margin-top: 15px;">
+                    <span class="pas-tag">切実な現実 (Agitation)</span>
+                    <p class="pas-desc">
+                        保護者も懸命に支援していますが、高騰する交通費・宿泊費の前に限界が近づいています。現在は、日々の練習で使うテニスボールさえも満足に替えられない切実な状況です。費用の問題で、彼女たちの「挑戦したい」という気持ちを諦めさせたくはありません。
+                    </p>
+                </div>
+                <div class="pas-item" style="margin-top: 15px;">
+                    <span class="pas-tag">解決のロードマップ (Solution)</span>
+                    <p class="pas-desc">
+                        そこで、OGの皆様、地域の皆様に正直にお願いをすることにいたしました。今回の資金造成を通じていただいたご支援は、全額選手たちの遠征費および部活動維持費として大切に活用させていただきます。
+                    </p>
+                </div>
+            </div>
+
+            <div class="遠征詳細">
+                <h3 class="section-subtitle">✈️ 遠征および大会概要</h3>
+                <table>
+                    <tr>
+                        <td class="label"><span class="nobrk">遠征期間</span></td>
+                        <td><span class="nobrk">2026年</span><span class="nobrk">（令和8年）</span><span class="nobrk">6月18日
+                                〜</span> <span class="nobrk">6月23日</span><span class="nobrk">（5泊6日）</span></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><span class="nobrk">開催地</span></td>
+                        <td><span class="nobrk">長崎県</span><span class="nobrk">（九州インターハイ）</span></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><span class="nobrk">目標金額</span></td>
+                        <td><span class="nobrk">1,000,000円</span><span class="nobrk">（Tシャツ販売・</span><span
+                                class="nobrk">寄付総額）</span></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><span class="nobrk">受付締切</span></td>
+                        <td><span class="nobrk">2026年</span><span class="nobrk">6月30日（火）まで</span></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 2.5: Voice of the Team -->
+        <section class="team-message-card">
+            <div class="quote-mark">“</div>
+            <!-- TODO: Replace with an actual team photo if available -->
+            <img src="team_photo.jpg" alt="コザ高女子テニス部の選手たち" class="team-photo" onerror="this.style.display='none'">
+            <p class="team-quote">
+                いつも私たちを応援してくださり、本当にありがとうございます。<br>
+                皆様の温かいサポートのおかげで、私たちは念願の九州インターハイへの切符を手にすることができました。<br><br>
+                日々の厳しい練習の中で、心が折れそうになることもありましたが、支えてくれる家族や先輩方、地域の皆様への感謝の気持ちが私たちを奮い立たせてくれました。<br>
+                長崎の舞台では、コザ高の看板を背負い、最後の一球まで決して諦めずに全力で走り抜きます！<br><br>
+                私たちの挑戦を、どうか温かく見守り、力をお貸しいただければ幸いです。応援よろしくお願いいたします！
+            </p>
+            <span class="team-author">コザ高等学校 女子テニス部 部員一同</span>
+        </section>
+
+        <!-- Section 3: Donation Value Mapping (お気持ちの可視化) -->
+        <section class="section-card">
+            <h2 class="section-title">❤️ ご支援ができること（お気持ちの可視化）</h2>
+            <p class="narrative-text">皆様からいただく温かいお気持ちは、以下のように選手たちの具体的なサポートへと直結します。</p>
+
+            <div class="value-grid">
+                <div class="value-card">
+                    <span class="value-amount">1,000 円</span>
+                    <span class="value-title">🎾 練習球の充実サポート</span>
+                    <span class="value-desc">
+                        <span class="nobrk">遠征前・遠征中における</span><span
+                            class="nobrk">「練習用の新品ボール1缶分」</span>となり、選手たちが満足に打てる<span class="nobrk">練習環境を作ります。</span>
+                    </span>
+                </div>
+                <div class="value-card">
+                    <span class="value-amount">3,000 円</span>
+                    <span class="value-title">🥤 コンディショニングサポート</span>
+                    <span class="value-desc">
+                        <span class="nobrk">激しい試合期における</span>選手1名分の<span class="nobrk">スポーツドリンク、</span><span
+                            class="nobrk">経口補水液、</span>および<span class="nobrk">補食サポート代</span>となり、現場での<span
+                            class="nobrk">体調管理を直接支えます。</span>
+                    </span>
+                </div>
+                <div class="value-card">
+                    <span class="value-amount">5,000 円</span>
+                    <span class="value-title">🏨 1泊分の宿泊費補助</span>
+                    <span class="value-desc">
+                        長崎での<span class="nobrk">過密な大会期間中、</span>選手1名が<span class="nobrk">安全・快適に</span>心身を休めるための<span
+                            class="nobrk">宿泊補助費として</span>活用されます。
+                    </span>
+                </div>
+                <div class="value-card">
+                    <span class="value-amount">10,000 円</span>
+                    <span class="value-title">🚌 チーム全体の移動サポート</span>
+                    <span class="value-desc">
+                        現地での<span class="nobrk">試合会場と</span>宿舎を繋ぐ<span class="nobrk">シャトルバスや、</span>長崎までの<span
+                            class="nobrk">チーム交通費を</span>一部負担し、選手全員が一体となって戦える<span class="nobrk">体制を維持します。</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Main Form (The Action) -->
+        <section class="section-card" id="apply-form-section">
+            <h2 class="section-title">👕 資金造成（Tシャツ購入・ご寄付）お申し込みフォーム</h2>
+            <p class="narrative-text" style="margin-bottom: 25px;">
+                <span class="nobrk">支援方法を</span>以下からご選択いただき、詳細をご入力ください。
+            </p>
+
+            <form id="fundraisingForm" onsubmit="handleFormSubmit(event)">
+
+                <!-- Basic Info -->
+                <div class="form-group">
+                    <label for="name" class="field-label required">お名前</label>
+                    <input type="text" id="name" name="name" class="input-control" placeholder="コザ 太郎" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="kana" class="field-label required">フリガナ</label>
+                    <input type="text" id="kana" name="kana" class="input-control" placeholder="コザ タロウ" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="field-label required">メールアドレス</label>
+                    <input type="email" id="email" name="email" class="input-control" placeholder="your@email.com"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" class="field-label required">お電話番号</label>
+                    <input type="tel" id="phone" name="phone" class="input-control" placeholder="090-0000-0000"
+                        pattern="^[0-9\-]+$" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label required">コザ高校テニス部とのご関係</label>
+                    <div class="choice-grid three-cols">
+                        <div class="choice-card" onclick="selectRelation(this, 'og')">
+                            <input type="radio" name="relation" value="og" required>
+                            <div class="choice-content">
+                                <span class="choice-title">OG / OB</span>
+                            </div>
+                        </div>
+                        <div class="choice-card" onclick="selectRelation(this, 'family')">
+                            <input type="radio" name="relation" value="family">
+                            <div class="choice-content">
+                                <span class="choice-title">保護者・ご家族</span>
+                            </div>
+                        </div>
+                        <div class="choice-card" onclick="selectRelation(this, 'community')">
+                            <input type="radio" name="relation" value="community">
+                            <div class="choice-content">
+                                <span class="choice-title">地域・一般</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support Method Selection -->
+                <div class="form-group"
+                    style="margin-top: 40px; border-top: 1px solid var(--border); padding-top: 30px;">
+                    <label class="field-label required">支援方法の選択</label>
+                    <div class="choice-grid">
+                        <div class="choice-card" id="btn-tshirt" onclick="toggleSupportMethod('tshirt')">
+                            <input type="checkbox" id="chk-tshirt" name="supportType" value="tshirt">
+                            <div class="choice-content">
+                                <span class="choice-title">👕 支援Tシャツを購入して支援</span>
+                                <span class="choice-desc">1枚 2,000円 / 特製デザイン</span>
+                            </div>
+                        </div>
+                        <div class="choice-card" id="btn-donation" onclick="toggleSupportMethod('donation')">
+                            <input type="checkbox" id="chk-donation" name="supportType" value="donation">
+                            <div class="choice-content">
+                                <span class="choice-title">❤️ 寄付で直接支援</span>
+                                <span class="choice-desc">金額は問いません</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dynamic Section A: T-Shirt Purchase -->
+                <div id="tshirt-section" class="dynamic-section">
+                    <h3 class="section-subtitle">👕 Tシャツの種類・サイズ選択</h3>
+                    
+                    <!-- アイビーグリーン -->
+                    <h4 style="margin: 15px 0 10px; color: var(--primary-dark); font-size: 1.1rem;">■ アイビーグリーン（深緑）</h4>
+                    <div class="tshirt-layout" style="margin-bottom: 30px;">
+                        <div class="tshirt-preview">
+                            <img src="tshirt_ivygreen.jpg" alt="アイビーグリーンTシャツ" onerror="this.src='support_tshirt.jpg'">
+                        </div>
+                        <div class="tshirt-grid">
+                            <div class="tshirt-size-card">
+                                <span class="size-label">S</span>
+                                <div class="quantity-control">
+                                    <button type="button" class="quantity-btn" onclick="updateQty('ivyGreen', 'S', -1)">-</button>
+                                    <span class="quantity-val" id="qty-ivyGreen-S">0</span>
+                                    <button type="button" class="quantity-btn" onclick="updateQty('ivyGreen', 'S', 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="tshirt-size-card">
+                                <span class="size-label">M</span>
+                                <div class="quantity-control">
+                                    <button type="button" class="quantity-btn" onclick="updateQty('ivyGreen', 'M', -1)">-</button>
+                                    <span class="quantity-val" id="qty-ivyGreen-M">0</span>
+                                    <button type="button" class="quantity-btn" onclick="updateQty('ivyGreen', 'M', 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="tshirt-size-card">
+                                <span class="size-label">L</span>
+                                <div class="quantity-control">
+                                    <button type="button" class="quantity-btn" onclick="updateQty('ivyGreen', 'L', -1)">-</button>
+                                    <span class="quantity-val" id="qty-ivyGreen-L">0</span>
+                                    <button type="button" class="quantity-btn" onclick="updateQty('ivyGreen', 'L', 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="tshirt-size-card">
+                                <span class="size-label">XL</span>
+                                <div class="quantity-control">
+                                    <button type="button" class="quantity-btn" onclick="updateQty('ivyGreen', 'XL', -1)">-</button>
+                                    <span class="quantity-val" id="qty-ivyGreen-XL">0</span>
+                                    <button type="button" class="quantity-btn" onclick="updateQty('ivyGreen', 'XL', 1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ネイビー -->
+                    <h4 style="margin: 15px 0 10px; color: var(--primary-dark); font-size: 1.1rem;">■ ネイビー（紺）</h4>
+                    <div class="tshirt-layout" style="margin-bottom: 30px;">
+                        <div class="tshirt-preview">
+                            <img src="tshirt_navy.jpg" alt="ネイビーTシャツ" onerror="this.src='support_tshirt.jpg'">
+                        </div>
+                        <div class="tshirt-grid">
+                            <div class="tshirt-size-card">
+                                <span class="size-label">S</span>
+                                <div class="quantity-control">
+                                    <button type="button" class="quantity-btn" onclick="updateQty('navy', 'S', -1)">-</button>
+                                    <span class="quantity-val" id="qty-navy-S">0</span>
+                                    <button type="button" class="quantity-btn" onclick="updateQty('navy', 'S', 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="tshirt-size-card">
+                                <span class="size-label">M</span>
+                                <div class="quantity-control">
+                                    <button type="button" class="quantity-btn" onclick="updateQty('navy', 'M', -1)">-</button>
+                                    <span class="quantity-val" id="qty-navy-M">0</span>
+                                    <button type="button" class="quantity-btn" onclick="updateQty('navy', 'M', 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="tshirt-size-card">
+                                <span class="size-label">L</span>
+                                <div class="quantity-control">
+                                    <button type="button" class="quantity-btn" onclick="updateQty('navy', 'L', -1)">-</button>
+                                    <span class="quantity-val" id="qty-navy-L">0</span>
+                                    <button type="button" class="quantity-btn" onclick="updateQty('navy', 'L', 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="tshirt-size-card">
+                                <span class="size-label">XL</span>
+                                <div class="quantity-control">
+                                    <button type="button" class="quantity-btn" onclick="updateQty('navy', 'XL', -1)">-</button>
+                                    <span class="quantity-val" id="qty-navy-XL">0</span>
+                                    <button type="button" class="quantity-btn" onclick="updateQty('navy', 'XL', 1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- バーガンディー -->
+                    <h4 style="margin: 15px 0 10px; color: var(--primary-dark); font-size: 1.1rem;">■ バーガンディー（エンジ）</h4>
+                    <div class="tshirt-layout">
+                        <div class="tshirt-preview">
+                            <img src="tshirt_burgundy.jpg" alt="バーガンディーTシャツ" onerror="this.src='support_tshirt.jpg'">
+                        </div>
+                        <div class="tshirt-grid">
+                            <div class="tshirt-size-card">
+                                <span class="size-label">S</span>
+                                <div class="quantity-control">
+                                    <button type="button" class="quantity-btn" onclick="updateQty('burgundy', 'S', -1)">-</button>
+                                    <span class="quantity-val" id="qty-burgundy-S">0</span>
+                                    <button type="button" class="quantity-btn" onclick="updateQty('burgundy', 'S', 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="tshirt-size-card">
+                                <span class="size-label">M</span>
+                                <div class="quantity-control">
+                                    <button type="button" class="quantity-btn" onclick="updateQty('burgundy', 'M', -1)">-</button>
+                                    <span class="quantity-val" id="qty-burgundy-M">0</span>
+                                    <button type="button" class="quantity-btn" onclick="updateQty('burgundy', 'M', 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="tshirt-size-card">
+                                <span class="size-label">L</span>
+                                <div class="quantity-control">
+                                    <button type="button" class="quantity-btn" onclick="updateQty('burgundy', 'L', -1)">-</button>
+                                    <span class="quantity-val" id="qty-burgundy-L">0</span>
+                                    <button type="button" class="quantity-btn" onclick="updateQty('burgundy', 'L', 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="tshirt-size-card">
+                                <span class="size-label">XL</span>
+                                <div class="quantity-control">
+                                    <button type="button" class="quantity-btn" onclick="updateQty('burgundy', 'XL', -1)">-</button>
+                                    <span class="quantity-val" id="qty-burgundy-XL">0</span>
+                                    <button type="button" class="quantity-btn" onclick="updateQty('burgundy', 'XL', 1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label class="field-label required">Tシャツ受け取り方法</label>
+                        <div class="choice-grid">
+                            <div class="choice-card" onclick="selectDelivery(this, 'hand')">
+                                <input type="radio" name="delivery" value="hand">
+                                <div class="choice-content">
+                                    <span class="choice-title">手渡し</span>
+                                    <span class="choice-desc">部員・関係者から直接受け取る</span>
+                                </div>
+                            </div>
+                            <div class="choice-card" onclick="selectDelivery(this, 'post')">
+                                <input type="radio" name="delivery" value="post">
+                                <div class="choice-content">
+                                    <span class="choice-title">配送希望（着払い）</span>
+                                    <span class="choice-desc">ご指定の住所へ発送いたします</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="address-group" style="display: none;">
+                        <label for="address" class="field-label required">ご配送先住所</label>
+                        <textarea id="address" name="address" class="input-control" rows="3"
+                            placeholder="〒904-0021 沖縄県沖縄市胡屋5丁目7-1"></textarea>
+                    </div>
+                </div>
+
+                <!-- Dynamic Section B: Donation -->
+                <div id="donation-section" class="dynamic-section">
+                    <h3 class="section-subtitle">❤️ 寄付金額のご選択</h3>
+
+                    <div class="donation-grid">
+                        <button type="button" class="donation-btn" onclick="setDonation(500)">500円</button>
+                        <button type="button" class="donation-btn" onclick="setDonation(1000)">1,000円</button>
+                        <div class="donation-btn-wrapper">
+                            <span class="badge-recommend">おすすめ</span>
+                            <button type="button" class="donation-btn" style="width: 100%; height: 100%;" onclick="setDonation(3000)">3,000円</button>
+                        </div>
+                        <div class="donation-btn-wrapper">
+                            <span class="badge-recommend">人気</span>
+                            <button type="button" class="donation-btn" style="width: 100%; height: 100%;" onclick="setDonation(5000)">5,000円</button>
+                        </div>
+                        <button type="button" class="donation-btn" onclick="setDonation(10000)">10,000円</button>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="custom-donation" class="field-label">任意の寄付金額（上記以外）</label>
+                        <div style="position: relative;">
+                            <input type="number" id="custom-donation" class="input-control" placeholder="自由な金額をご入力ください"
+                                oninput="handleCustomDonation(this)" min="100">
+                            <span
+                                style="position: absolute; right: 16px; top: 12px; font-weight: bold; color: var(--text-muted);">円</span>
+                        </div>
+                    </div>
+
+                    <!-- Premium Supporter Banner -->
+                    <div class="premium-banner">
+                        <div class="premium-banner-title">
+                            👑 法人・団体様、OB/OGの大口支援をご検討の方へ
+                        </div>
+                        <div class="premium-banner-desc">
+                            30,000円以上の高額支援も大変ありがたく受け付けております。<br>
+                            「任意の寄付金額」欄に直接ご希望の金額をご入力ください。<br>
+                            皆様の多大なるサポートが、選手たちの大きな力となります。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Method Selection -->
+                <div class="form-group" style="margin-top: 30px;">
+                    <label class="field-label required">ご希望の送金方法</label>
+                    <div class="choice-grid">
+                        <div class="choice-card" onclick="selectPayment(this, 'bank')">
+                            <input type="radio" name="payment" value="bank" required>
+                            <div class="choice-content">
+                                <span class="choice-title">🏦 銀行振込</span>
+                                <span class="choice-desc">指定の口座へお振り込み</span>
+                            </div>
+                        </div>
+                        <div class="choice-card" onclick="selectPayment(this, 'paypay')">
+                            <input type="radio" name="payment" value="paypay">
+                            <div class="choice-content">
+                                <span class="choice-title">📱 PayPay送金</span>
+                                <span class="choice-desc">PayPay残高を送金</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message" class="field-label">部員たちへのメッセージ（任意）</label>
+                    <textarea id="message" name="message" class="input-control" rows="3"
+                        placeholder="九州大会も楽しんで全力を出し切ってください！支援しています！"></textarea>
+                </div>
+
+                <!-- Total Summary Card -->
+                <div class="summary-card">
+                    <div class="summary-row" id="summary-tshirt-row" style="display: none;">
+                        <span>支援Tシャツ（合計 <span id="summary-tshirt-count">0</span> 枚）</span>
+                        <span>¥<span id="summary-tshirt-price">0</span></span>
+                    </div>
+                    <div class="summary-row" id="summary-donation-row" style="display: none;">
+                        <span>ご寄付額</span>
+                        <span>¥<span id="summary-donation-price">0</span></span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>合計支援金額</span>
+                        <span class="total-price">¥<span id="total-amount">0</span></span>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">
+                    <span>✨</span> 資金造成の支援を確定する
+                </button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 コザ高等学校女子テニス部保護者会 & 部員一同</p>
+        </footer>
+    </div>
+
+    <!-- Thank you / Payment Instruction Modal -->
+    <div id="thankYouModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-icon">✓</div>
+                <h3 class="modal-title">資金造成のご支援お申し込みありがとうございます</h3>
+            </div>
+            <div class="modal-body">
+                <p><span class="nobrk">コザ高女子テニス部一同、</span><span class="nobrk">皆様の温かいご支援に</span>心より感謝申し上げます。</p>
+                <p style="margin-top: 10px; font-weight: 500;">【お振込・送金のお願い】</p>
+                <p><span class="nobrk">大変お手数ですが、</span><span
+                        class="nobrk">6月30日（火）までに、</span>ご選択いただいた下記口座またはアカウント宛てにお手続きをお願いいたします。</p>
+
+                <div class="payment-info">
+                    <!-- Bank Transfer Card -->
+                    <div id="modal-bank-card" class="payment-card">
+                        <div class="payment-card-header">
+                            <span class="payment-icon">🏦</span>
+                            <span class="payment-title">銀行振込先</span>
+                        </div>
+                        <div class="payment-card-body" id="bank-info">
+                            <strong>〇〇銀行　〇〇支店</strong><br>
+                            口座番号：〇〇〇〇〇〇<br>
+                            口座名義：コザ高校女子テニス部保護者会
+                        </div>
+                        <button type="button" class="action-copy-btn" onclick="copyText('bank-info', this)">
+                            📋 口座情報をコピーする
+                        </button>
+                    </div>
+
+                    <!-- PayPay Card -->
+                    <div id="modal-paypay-card" class="payment-card">
+                        <div class="payment-card-header">
+                            <span class="payment-icon">📱</span>
+                            <span class="payment-title">PayPay送金先</span>
+                        </div>
+                        <div class="payment-card-body">
+                            <strong>PayPay ID: <span id="paypay-id-text">yujiro0070111</span></strong>
+                        </div>
+                        <div class="payment-actions" style="display: block;">
+                            <button type="button" class="action-copy-btn" style="width: 100%;"
+                                onclick="copyText('paypay-id-text', this)">
+                                📋 IDをコピーする
+                            </button>
+                        </div>
+                        <div class="payment-instructions"
+                            style="margin-top: 10px; font-size: 0.85rem; color: var(--text-main); text-align: left;">
+                            PayPayアプリを開き、「送る・受け取る」から上記のIDを検索してご支援金額の送金をお願いいたします。
+                        </div>
+                        <p class="payment-notice">
+                            ※送金時メッセージにお名前をご入力ください。
+                        </p>
+                    </div>
+
+                    <!-- Total Amount Card -->
+                    <div class="payment-card amount-card">
+                        <div class="amount-label">💰 申込総額</div>
+                        <div class="amount-value">
+                            ¥<span id="modal-total-price">0</span>
+                        </div>
+                        <button type="button" class="action-copy-btn" onclick="copyAmount(this)">
+                            📋 金額をコピーする
+                        </button>
+                    </div>
+                </div>
+
+                <p style="font-size: 0.85rem; color: var(--text-muted);">
+                    ※この内容の控えを、ご入力いただいたメールアドレス宛てに自動送信いたします（数分かかる場合があります）。
+                </p>
+            </div>
+            <button class="close-modal-btn" onclick="closeModal()">閉じる</button>
+        </div>
+    </div>
+
+    <script>
+        // Form state
+        let selectedRelation = '';
+        let supportTshirt = false;
+        let supportDonation = false;
+        let selectedDelivery = '';
+        let selectedPayment = '';
+
+        let tshirtQty = {
+            navy: { S: 0, M: 0, L: 0, XL: 0 },
+            burgundy: { S: 0, M: 0, L: 0, XL: 0 },
+            ivyGreen: { S: 0, M: 0, L: 0, XL: 0 }
+        };
+        let donationAmount = 0;
+
+        // Relation Selection
+        function selectRelation(element, val) {
+            const container = element.parentElement;
+            container.querySelectorAll('.choice-card').forEach(c => c.classList.remove('selected'));
+            element.classList.add('selected');
+            element.querySelector('input[type="radio"]').checked = true;
+            selectedRelation = val;
+        }
+
+        // Toggle support method checkboxes
+        function toggleSupportMethod(method) {
+            if (method === 'tshirt') {
+                const chk = document.getElementById('chk-tshirt');
+                chk.checked = !chk.checked;
+                supportTshirt = chk.checked;
+                document.getElementById('btn-tshirt').classList.toggle('selected', supportTshirt);
+
+                const sec = document.getElementById('tshirt-section');
+                sec.style.display = supportTshirt ? 'block' : 'none';
+
+                // Adjust validation
+                const addressInput = document.getElementById('address');
+                if (supportTshirt && selectedDelivery === 'post') {
+                    addressInput.required = true;
+                } else {
+                    addressInput.required = false;
+                }
+            } else if (method === 'donation') {
+                const chk = document.getElementById('chk-donation');
+                chk.checked = !chk.checked;
+                supportDonation = chk.checked;
+                document.getElementById('btn-donation').classList.toggle('selected', supportDonation);
+
+                const sec = document.getElementById('donation-section');
+                sec.style.display = supportDonation ? 'block' : 'none';
+            }
+            calculateTotal();
+        }
+
+        // T-shirt quantity controllers
+        function updateQty(color, size, diff) {
+            let current = tshirtQty[color][size];
+            let target = current + diff;
+            if (target < 0) target = 0;
+            tshirtQty[color][size] = target;
+            document.getElementById(`qty-${color}-${size}`).innerText = target;
+            calculateTotal();
+        }
+
+        // Delivery choice
+        function selectDelivery(element, val) {
+            const container = element.parentElement;
+            container.querySelectorAll('.choice-card').forEach(c => c.classList.remove('selected'));
+            element.classList.add('selected');
+            element.querySelector('input[type="radio"]').checked = true;
+            selectedDelivery = val;
+
+            const addressGroup = document.getElementById('address-group');
+            const addressInput = document.getElementById('address');
+            if (val === 'post') {
+                addressGroup.style.display = 'block';
+                addressInput.required = true;
+            } else {
+                addressGroup.style.display = 'none';
+                addressInput.required = false;
+            }
+        }
+
+        // Payment choice
+        function selectPayment(element, val) {
+            const container = element.parentElement;
+            container.querySelectorAll('.choice-card').forEach(c => c.classList.remove('selected'));
+            element.classList.add('selected');
+            element.querySelector('input[type="radio"]').checked = true;
+            selectedPayment = val;
+        }
+
+        // Donation selections
+        function setDonation(amount) {
+            document.querySelectorAll('.donation-btn').forEach(btn => {
+                btn.classList.remove('selected');
+                if (parseInt(btn.innerText.replace(/[^0-9]/g, '')) === amount) {
+                    btn.classList.add('selected');
+                }
+            });
+            document.getElementById('custom-donation').value = '';
+            donationAmount = amount;
+            calculateTotal();
+        }
+
+        function handleCustomDonation(input) {
+            document.querySelectorAll('.donation-btn').forEach(btn => btn.classList.remove('selected'));
+            const val = parseInt(input.value);
+            donationAmount = isNaN(val) ? 0 : val;
+            calculateTotal();
+        }
+
+        // Calculate Totals
+        function calculateTotal() {
+            let totalTshirtCount = 0;
+            for(let color in tshirtQty) {
+                totalTshirtCount += Object.values(tshirtQty[color]).reduce((a, b) => a + b, 0);
+            }
+            let tshirtPrice = totalTshirtCount * 2000;
+            let finalDonation = supportDonation ? donationAmount : 0;
+            let grandTotal = tshirtPrice + finalDonation;
+
+            // Update Summary
+            const tshirtRow = document.getElementById('summary-tshirt-row');
+            if (supportTshirt && totalTshirtCount > 0) {
+                tshirtRow.style.display = 'flex';
+                document.getElementById('summary-tshirt-count').innerText = totalTshirtCount;
+                document.getElementById('summary-tshirt-price').innerText = tshirtPrice.toLocaleString();
+            } else {
+                tshirtRow.style.display = 'none';
+            }
+
+            const donationRow = document.getElementById('summary-donation-row');
+            if (supportDonation && finalDonation > 0) {
+                donationRow.style.display = 'flex';
+                document.getElementById('summary-donation-price').innerText = finalDonation.toLocaleString();
+            } else {
+                donationRow.style.display = 'none';
+            }
+
+            document.getElementById('total-amount').innerText = grandTotal.toLocaleString();
+            document.getElementById('modal-total-price').innerText = grandTotal.toLocaleString();
+
+            // (paypay.me は公式機能ではないため、自動リンク生成機能を削除しました)
+        }
+
+        // Google Apps Script Web App URL (※ジロウさんがGAS公開後に取得するURLをここに貼り付けます)
+        const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbxRpZsLCSCgqyaT0fvluMmdWQS-e6HDoWPiWcy6b2V5zUBvaepEWOfsp1ecVGYFKyzF/exec';
+
+        // ページ読み込み時にリアルタイム進捗データを取得する
+        async function fetchLiveProgress() {
+            if (GAS_API_URL.includes('YOUR_GAS_API_ID')) {
+                // 【ローカルテストモード】スプレッドシート未連携時はブラウザの保存データを使用
+                const localAmount = parseInt(localStorage.getItem('test_amount')) || 0;
+                const localSupporters = parseInt(localStorage.getItem('test_supporters')) || 0;
+                updateProgressUI(localAmount, localSupporters);
+
+                // フッターにテスト用リセットボタンを表示する
+                showTestResetButton();
+                return;
+            }
+            try {
+                const response = await fetch(GAS_API_URL);
+                if (!response.ok) throw new Error('進捗データの取得に失敗しました');
+                const data = await response.json();
+
+                updateProgressUI(data.amount || 0, data.supporters || 0);
+            } catch (error) {
+                console.error('API取得エラー:', error);
+            }
+        }
+
+        // UIを更新する共通関数
+        function updateProgressUI(currentAmount, supporterCount) {
+            const targetAmount = 1000000;
+            const percentage = Math.min(Math.round((currentAmount / targetAmount) * 100), 100);
+
+            // 進捗ゲージと数値をリアルタイム更新
+            const progressBar = document.querySelector('.progress-bar');
+            if (progressBar) progressBar.style.width = `${percentage}%`;
+
+            const stats = document.querySelectorAll('.stat-val');
+            if (stats.length >= 3) {
+                stats[0].innerText = `${currentAmount.toLocaleString()}円`;
+                stats[1].innerText = `${percentage} %`;
+                stats[2].innerText = `${supporterCount} 人`;
+            }
+        }
+
+        // テストリセットボタンの表示（ローカルテスト用）
+        function showTestResetButton() {
+            if (document.getElementById('test-reset-btn')) return;
+            const footer = document.querySelector('footer');
+            if (footer) {
+                const resetBtn = document.createElement('button');
+                resetBtn.id = 'test-reset-btn';
+                resetBtn.innerText = '⚙️ テストデータをリセットする';
+                resetBtn.style.cssText = 'background:none; border:none; color:var(--text-muted); font-size:0.75rem; text-decoration:underline; cursor:pointer; margin-top:10px; display:inline-block;';
+                resetBtn.onclick = () => {
+                    localStorage.removeItem('test_amount');
+                    localStorage.removeItem('test_supporters');
+                    alert('テスト用の集計データをリセットしました。');
+                    location.reload();
+                };
+                footer.appendChild(document.createElement('br'));
+                footer.appendChild(resetBtn);
+            }
+        }
+
+        // ページ読み込み時に進捗データを取得
+        window.addEventListener('DOMContentLoaded', fetchLiveProgress);
+
+        // Form Submit (非同期でGASへ送信)
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+
+            // Custom Validation
+            if (!supportTshirt && !supportDonation) {
+                alert('支援方法（Tシャツ購入、または寄付）を少なくとも1つ選択してください。');
+                return;
+            }
+
+            if (supportTshirt) {
+                let totalTshirts = 0;
+                for(let color in tshirtQty) {
+                    totalTshirts += Object.values(tshirtQty[color]).reduce((a, b) => a + b, 0);
+                }
+                if (totalTshirts === 0) {
+                    alert('Tシャツ購入を選択されていますが、枚数が0枚です。サイズごとの枚数を選択してください。');
+                    return;
+                }
+                if (!selectedDelivery) {
+                    alert('Tシャツの受け取り方法を選択してください。');
+                    return;
+                }
+            }
+
+            if (supportDonation && donationAmount <= 0) {
+                alert('寄付を選択されていますが、金額が指定されていません。金額を選択するか、自由入力欄に入力してください。');
+                return;
+            }
+
+            if (!selectedPayment) {
+                alert('ご希望の送金方法を選択してください。');
+                return;
+            }
+
+            // 金額の算出
+            let totalTshirtCount = 0;
+            for(let color in tshirtQty) {
+                totalTshirtCount += Object.values(tshirtQty[color]).reduce((a, b) => a + b, 0);
+            }
+            let tshirtPrice = totalTshirtCount * 2000;
+            let finalDonation = supportDonation ? donationAmount : 0;
+            let grandTotal = tshirtPrice + finalDonation;
+
+            // 送信ボタンのローディング表示
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalBtnHtml = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>⏳</span> 送信中...';
+
+            // 送信データのパース
+            const formData = new FormData(document.getElementById('fundraisingForm'));
+
+            // 動的に計算した数値や詳細データをマージ
+            formData.append('navyS', tshirtQty.navy.S);
+            formData.append('navyM', tshirtQty.navy.M);
+            formData.append('navyL', tshirtQty.navy.L);
+            formData.append('navyXL', tshirtQty.navy.XL);
+            formData.append('burgundyS', tshirtQty.burgundy.S);
+            formData.append('burgundyM', tshirtQty.burgundy.M);
+            formData.append('burgundyL', tshirtQty.burgundy.L);
+            formData.append('burgundyXL', tshirtQty.burgundy.XL);
+            formData.append('ivyGreenS', tshirtQty.ivyGreen.S);
+            formData.append('ivyGreenM', tshirtQty.ivyGreen.M);
+            formData.append('ivyGreenL', tshirtQty.ivyGreen.L);
+            formData.append('ivyGreenXL', tshirtQty.ivyGreen.XL);
+            formData.append('donationAmount', finalDonation);
+            formData.append('totalAmount', grandTotal);
+
+            // POST送信用のURLSearchParamsを作成
+            const params = new URLSearchParams();
+            for (const [key, value] of formData.entries()) {
+                params.append(key, value);
+            }
+
+            // GAS API 送信処理 (API URLが未設定の場合はローカルテストを実行)
+            if (!GAS_API_URL.includes('YOUR_GAS_API_ID')) {
+                try {
+                    await fetch(GAS_API_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: params.toString()
+                    });
+                } catch (error) {
+                    console.error('GAS送信エラー:', error);
+                    alert('送信に失敗しました。時間をおいて再度お試しください。');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnHtml;
+                    return;
+                }
+            } else {
+                // 【ローカルテストモード】
+                const localAmount = parseInt(localStorage.getItem('test_amount')) || 0;
+                const localSupporters = parseInt(localStorage.getItem('test_supporters')) || 0;
+
+                localStorage.setItem('test_amount', localAmount + grandTotal);
+                localStorage.setItem('test_supporters', localSupporters + 1);
+
+                updateProgressUI(localAmount + grandTotal, localSupporters + 1);
+            }
+
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
+
+            document.getElementById('modal-bank-card').style.display = (selectedPayment === 'bank') ? 'flex' : 'none';
+            document.getElementById('modal-paypay-card').style.display = (selectedPayment === 'paypay') ? 'flex' : 'none';
+
+            document.getElementById('thankYouModal').classList.add('open');
+        }
+
+        function closeModal() {
+            document.getElementById('thankYouModal').classList.remove('open');
+            document.getElementById('fundraisingForm').reset();
+
+            selectedRelation = '';
+            supportTshirt = false;
+            supportDonation = false;
+            selectedDelivery = '';
+            selectedPayment = '';
+            tshirtQty = {
+                navy: { S: 0, M: 0, L: 0, XL: 0 },
+                burgundy: { S: 0, M: 0, L: 0, XL: 0 },
+                ivyGreen: { S: 0, M: 0, L: 0, XL: 0 }
+            };
+            donationAmount = 0;
+
+            document.querySelectorAll('.choice-card').forEach(c => c.classList.remove('selected'));
+            document.querySelectorAll('.donation-btn').forEach(b => b.classList.remove('selected'));
+            document.querySelectorAll('.quantity-val').forEach(v => v.innerText = '0');
+
+            document.getElementById('tshirt-section').style.display = 'none';
+            document.getElementById('donation-section').style.display = 'none';
+            document.getElementById('address-group').style.display = 'none';
+
+            calculateTotal();
+        }
+
+        // Copy Text Function
+        function copyText(targetId, btn) {
+            const el = document.getElementById(targetId);
+            if (!el) return;
+
+            // Format text (clean up tags, double spaces and newlines)
+            let text = el.innerText.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
+
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✓ コピー完了';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('コピー失敗:', err);
+                alert('コピーに失敗しました。手動でコピーをお願いします。');
+            });
+        }
+
+        // Copy Amount Function
+        function copyAmount(btn) {
+            const amountEl = document.getElementById('modal-total-price');
+            if (!amountEl) return;
+
+            // Clean up comma formatting for numbers
+            const amount = amountEl.innerText.replace(/,/g, '');
+
+            navigator.clipboard.writeText(amount).then(() => {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✓ コピー完了';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('コピー失敗:', err);
+            });
+        }
+    </script>
+</body>
+
+</html>
