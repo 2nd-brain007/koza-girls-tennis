@@ -758,6 +758,39 @@
             box-shadow: 0 6px 18px rgba(217, 119, 6, 0.35);
         }
 
+        /* Contact Section */
+        .contact-section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 32px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid var(--border);
+        }
+        .contact-section p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            background-color: var(--surface);
+            padding: 10px 24px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .contact-email:hover {
+            background-color: #d1fae5;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -1491,6 +1524,15 @@
                 </button>
             </form>
         </section>
+        <!-- お問い合わせ -->
+        <section class="contact-section">
+            <h2 class="section-title">お問い合わせ</h2>
+            <p>ご支援に関するご不明な点などがございましたら、<br>以下のメールアドレスまでお気軽にお問い合わせください。</p>
+            <a href="mailto:kozatennis.r8@gmail.com" class="contact-email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                kozatennis.r8@gmail.com
+            </a>
+        </section>
 
         <footer>
             <p>&copy; 2026 コザ高等学校女子テニス部保護者会 & 部員一同</p>
@@ -1718,7 +1760,7 @@
         }
 
         // Google Apps Script Web App URL (※ジロウさんがGAS公開後に取得するURLをここに貼り付けます)
-        const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbyfb-E2ywsG-vJSdG_FcuIeKQfOj2Su8LA9BCpJF4VGiNmWvjhc_8-iC5zrYkcHBbO8/exec';
+        const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbzRMCoi7R_zyrO-MTystRRyc2O-xpqnIk9YRFNScJZOWWBBwfY0GE5sgJdZ8UlqP5mZ/exec';
 
         // ページ読み込み時にリアルタイム進捗データを取得する
         async function fetchLiveProgress() {
