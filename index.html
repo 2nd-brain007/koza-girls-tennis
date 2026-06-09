@@ -45,6 +45,7 @@
         body {
             font-family: 'Noto Sans JP', 'Outfit', sans-serif;
             background-color: var(--background);
+            background-image: repeating-linear-gradient(45deg, rgba(10,92,54,0.015) 0, rgba(10,92,54,0.015) 2px, transparent 2px, transparent 8px);
             color: var(--text-main);
             line-height: 1.8;
             -webkit-font-smoothing: antialiased;
@@ -74,23 +75,18 @@
 
         /* Header / Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            /* 画像を美しく見せるため、上部は完全に透明、下部のみ暗くして文字を読ませる */
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%), url('hero_image.png') center/cover no-repeat;
             color: white;
-            padding: 70px 16px 90px;
+            min-height: 65vh; /* 画面を大きく占有してインパクトを出す */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 40px 16px 60px;
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
-            pointer-events: none;
         }
 
         .hero-container {
@@ -98,6 +94,7 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
+            width: 100%;
         }
 
         .badge {
@@ -117,10 +114,10 @@
         .hero-title {
             font-family: 'Noto Sans JP', sans-serif;
             font-weight: 900;
-            font-size: 2.1rem;
+            font-size: 2.3rem;
             line-height: 1.35;
             margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0,0,0,0.8); /* 画像に負けない強いシャドウ */
             letter-spacing: -0.02em;
         }
 
@@ -131,11 +128,16 @@
         }
 
         .hero-desc {
-            font-size: 1rem;
+            font-size: 1.05rem;
             max-width: 600px;
             margin: 0 auto;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 300;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.3);
+            padding: 12px 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(2px);
         }
 
         /* Main Content Container */
@@ -147,6 +149,7 @@
             z-index: 2;
         }
 
+        
         /* Sections inside LP */
         .section-card {
             background-color: var(--surface);
@@ -168,13 +171,25 @@
         .section-title {
             font-size: 1.35rem;
             color: var(--primary);
-            margin-bottom: 20px;
-            display: flex;
+            margin-bottom: 24px;
+            display: inline-flex;
             align-items: center;
             gap: 10px;
             font-weight: 900;
-            border-left: 5px solid var(--primary);
-            padding-left: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background-color: rgba(251, 191, 36, 0.4);
+            z-index: -1;
+            transform: rotate(-1deg);
+            border-radius: 2px;
         }
 
         .section-subtitle {
@@ -235,33 +250,90 @@
             color: var(--text-muted);
         }
 
-        /* PAS Framework Highlights */
-        .pas-box {
-            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-            border: 1px solid #fde68a;
-            border-radius: var(--radius-md);
+/* Emotional Story Blocks */
+        .story-celebration {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left: 6px solid #f59e0b;
             padding: 20px;
-            margin: 20px 0;
+            border-radius: 8px;
+            margin: 24px 0;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1);
+        }
+        .story-celebration h3 {
+            color: #b45309;
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            font-weight: 900;
+        }
+        .story-celebration p {
+            color: #92400e;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 700;
         }
 
-        .pas-item {
-            margin-bottom: 12px;
+        .story-problem {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            padding: 24px 20px;
+            border-radius: 8px;
+            margin: 32px 0;
         }
-
-        .pas-item:last-child {
+        .story-problem p {
+            color: #7f1d1d;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        .story-problem p:last-child {
             margin-bottom: 0;
         }
-
-        .pas-tag {
-            background-color: var(--accent);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 4px;
+        .story-problem strong {
+            background: linear-gradient(transparent 60%, #fca5a5 60%);
+            padding: 0 2px;
         }
+
+        .story-plea {
+            background: #f0fdfa;
+            border: 2px solid #0d9488;
+            padding: 24px 20px;
+            border-radius: 8px;
+            margin: 32px 0 16px;
+            box-shadow: 0 4px 16px rgba(13, 148, 136, 0.15);
+            position: relative;
+        }
+        .story-plea::before {
+            content: '❝';
+            position: absolute;
+            top: -15px;
+            left: 15px;
+            font-size: 3rem;
+            color: #0d9488;
+            background: var(--surface);
+            line-height: 1;
+            padding: 0 5px;
+        }
+        .story-plea p {
+            color: #115e59;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            font-weight: 700;
+            margin: 0;
+            padding-top: 10px;
+        }
+
+        .story-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+        .story-badge.warning { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+        .story-badge.danger { background: #ef4444; color: white; box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3); }
+        .story-badge.heartfelt { background: #0d9488; color: white; box-shadow: 0 2px 4px rgba(13, 148, 136, 0.3); }
 
         .pas-desc {
             font-size: 0.9rem;
@@ -645,47 +717,6 @@
         }
 
         /* Voice of the Team */
-        .team-photo {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: var(--radius-md);
-            margin-bottom: 20px;
-            background-color: #e2e8f0;
-            display: block;
-        }
-
-        .quote-mark {
-            font-size: 4rem;
-            color: var(--primary-light);
-            opacity: 0.15;
-            position: absolute;
-            top: 210px;
-            left: 20px;
-            font-family: serif;
-            line-height: 1;
-        }
-
-        .team-quote {
-            font-size: 0.95rem;
-            line-height: 1.8;
-            color: var(--text-main);
-            font-weight: 500;
-            position: relative;
-            z-index: 1;
-            padding: 0 10px;
-        }
-
-        .team-author {
-            display: block;
-            text-align: right;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 15px;
-            font-weight: 700;
-        }
-
-        /* Recommended Badge & Premium Banner */
         .donation-btn-wrapper {
             position: relative;
         }
@@ -794,9 +825,34 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 30px 16px;
+            padding: 30px 16px 80px 16px; /* Added bottom padding for floating CTA */
             color: var(--text-muted);
             font-size: 0.8rem;
+        }
+
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 400px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            color: white;
+            text-align: center;
+            padding: 16px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 24px rgba(217, 119, 6, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .floating-cta:hover {
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 12px 28px rgba(217, 119, 6, 0.5);
         }
 
         /* Modal styling */
@@ -1037,6 +1093,77 @@
         .nobrk {
             display: inline-block;
         }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .choice-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .choice-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.7); }
+            70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(217, 119, 6, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); }
+        }
+        .floating-btn {
+            animation: pulse 2s infinite;
+        }
+        .floating-btn:hover {
+            animation: none;
+            /* fixed in base class */
+            /* translateX(-50%) is needed because the floating btn is left:50% centered */
+        }
+
+
+        /* Parallax Team Message Card */
+        .team-message-card {
+            background: linear-gradient(rgba(10, 92, 54, 0.85), rgba(10, 92, 54, 0.95)), url('hero_image.png') center/cover fixed no-repeat;
+            color: white;
+            padding: 50px 24px;
+            border-radius: 12px;
+            margin: 40px 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .quote-mark {
+            font-size: 6rem;
+            color: rgba(255, 255, 255, 0.15);
+            line-height: 0.5;
+            font-family: Georgia, serif;
+            margin-bottom: 20px;
+        }
+        .team-quote {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            font-weight: 500;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 1;
+        }
+        .team-author {
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: #fbbf24;
+            display: inline-block;
+            border-top: 2px solid rgba(251, 191, 36, 0.5);
+            padding-top: 16px;
+        }
+
     </style>
 </head>
 
@@ -1045,17 +1172,16 @@
     <!-- Header / Hero Section -->
     <header class="hero">
         <div class="hero-container">
-            <span class="badge">令和8年度 九州インターハイ出場決定</span>
-            <h1 class="hero-title">
-                <span class="nobrk">夢の舞台へ、</span><span class="nobrk">もう一度。</span><br class="pc-only">
-                <span class="nobrk">コザ高女子テニス部へ</span><span class="nobrk">遠征資金の</span><span
-                    class="nobrk">ご支援を</span><span class="nobrk">お願いします</span>
+            <span class="badge" style="background-color: #ef4444; color: white;">令和8年度 九州インターハイ出場決定</span>
+            <h1 class="hero-title" style="font-size: 2.2rem; line-height: 1.4; margin-bottom: 20px;">
+                <span class="nobrk">夢の舞台へ、</span><span class="nobrk">もう一度。</span><br>
+                <span class="nobrk" style="color: #fbbf24;">コザ高女子テニス部</span><span class="nobrk">の挑戦を</span><span class="nobrk">応援しよう！</span>
             </h1>
-            <p class="hero-desc">
-                <span class="nobrk">選手たちの</span>「挑戦したい」という<span class="nobrk">真っ直ぐな気持ちを、</span><span
-                    class="nobrk">費用の問題で</span><span class="nobrk">諦めさせたくない。</span><br class="pc-only">
-                <span class="nobrk">Tシャツの購入と</span><span class="nobrk">寄付を通じた、</span><span
-                    class="nobrk">遠征資金造成への</span><span class="nobrk">ご協力をお願いいたします。</span>
+            <p class="hero-desc" style="font-size: 1.05rem; background: rgba(0, 0, 0, 0.4); padding: 16px; border-radius: 8px;">
+                <span class="nobrk">選手たちの</span>「挑戦したい」という<span class="nobrk">純粋な思いを、</span><span
+                    class="nobrk">費用の壁で</span><span class="nobrk">諦めさせたくない。</span><br class="pc-only">
+                <span class="nobrk">オリジナルTシャツと</span><span class="nobrk">ご寄付を通じた、</span><span
+                    class="nobrk">皆様からの</span><span class="nobrk">熱いご支援をお願いいたします。</span>
             </p>
         </div>
     </header>
@@ -1064,7 +1190,7 @@
     <div class="container">
 
         <!-- Section 1: Progress Tracker -->
-        <section class="section-card">
+        <section class="section-card fade-up">
             <h2 class="section-title">📊 遠征支援プロジェクトの進捗</h2>
             <div class="progress-container">
                 <div class="progress-bar"></div>
@@ -1082,39 +1208,36 @@
                     <span class="stat-val">0 人</span>
                     <span class="stat-label">サポーター数</span>
                 </div>
+                <div class="stat-item">
+                    <span class="stat-val" id="stat-days-left">- 日</span>
+                    <span class="stat-label">Tシャツ締切まで</span>
+                </div>
+
             </div>
         </section>
 
         <!-- Section 2: Project Background & PAS Framework -->
-        <section class="section-card">
+        <section class="section-card fade-up">
             <h2 class="section-title">📢 資金造成プロジェクトの背景</h2>
             <p class="narrative-text">
                 いつも<span class="nobrk">コザ高等学校</span><span class="nobrk">女子テニス部を</span>温かく支えていただき、誠にありがとうございます。
             </p>
-            <p class="narrative-text">
-                令和8年度<span
-                    class="nobrk">沖縄県インターハイ予選</span>において、部員たちの一球にかけるひたむきな努力が実を結び、見事<strong>準優勝</strong>を勝ち取りました！これにより、長崎県で開催される「九州インターハイ」への出場が決定いたしました。
-            </p>
+            <div class="story-celebration fade-up">
+                <h3>🏆 九州インターハイ出場決定！</h3>
+                <p>令和8年度沖縄県インターハイ予選において、部員たちの一球にかけるひたむきな努力が実を結び、見事<strong>準優勝</strong>を勝ち取りました！</p>
+            </div>
 
-            <!-- PAS Framework Highlights for Emotional Connection -->
-            <div class="pas-box">
-                <div class="pas-item">
-                    <span class="pas-tag">現在の課題 (Problem)</span>
-                    <p class="pas-desc">今年度からPTA会費の不足等の影響で、部活動への公式な遠征資金援助が受けられなくなりました。その結果、選手個人の遠征負担額が昨年に比べ大幅に増加しています。
-                    </p>
-                </div>
-                <div class="pas-item" style="margin-top: 15px;">
-                    <span class="pas-tag">切実な現実 (Agitation)</span>
-                    <p class="pas-desc">
-                        保護者も懸命に支援していますが、高騰する交通費・宿泊費の前に限界が近づいています。現在は、日々の練習で使うテニスボールさえも満足に替えられない切実な状況です。費用の問題で、彼女たちの「挑戦したい」という気持ちを諦めさせたくはありません。
-                    </p>
-                </div>
-                <div class="pas-item" style="margin-top: 15px;">
-                    <span class="pas-tag">解決のロードマップ (Solution)</span>
-                    <p class="pas-desc">
-                        そこで、OGの皆様、地域の皆様に正直にお願いをすることにいたしました。今回の資金造成を通じていただいたご支援は、全額選手たちの遠征費および部活動維持費として大切に活用させていただきます。
-                    </p>
-                </div>
+            <div class="story-problem fade-up">
+                <div class="story-badge warning">直面している壁</div>
+                <p>今年度からPTA会費の不足等の影響で、部活動への公式な遠征資金援助が受けられなくなりました。その結果、<strong>選手個人の遠征負担額が昨年に比べ大幅に増加</strong>しています。</p>
+                
+                <div class="story-badge danger">切実な現状</div>
+                <p>保護者も懸命に支援していますが、高騰する交通費・宿泊費の前に限界が近づいています。<br>現在は<strong>日々の練習で使うテニスボールさえも満足に替えられない</strong>状況です。<br>費用の問題で、彼女たちの「挑戦したい」という純粋な思いを諦めさせたくはありません。</p>
+            </div>
+
+            <div class="story-plea fade-up">
+                <div class="story-badge heartfelt">皆様へのお願い</div>
+                <p>そこで、OGの皆様、地域の皆様に正直にお願いをすることにいたしました。<br>今回の資金造成を通じていただいたご支援は、<span style="color:#0f766e; border-bottom: 2px solid #5eead4;">全額選手たちの遠征費および部活動維持費として大切に活用させていただきます。</span></p>
             </div>
 
             <div class="遠征詳細">
@@ -1136,17 +1259,18 @@
                     </tr>
                     <tr>
                         <td class="label"><span class="nobrk">受付締切</span></td>
-                        <td><span class="nobrk">2026年</span><span class="nobrk">6月30日（火）まで</span></td>
+                        <td>
+                            <span class="nobrk">【Tシャツ】2026年6月17日（水）まで</span><br>
+                            <span class="nobrk">【寄付のみ】2026年6月30日（火）まで</span>
+                        </td>
                     </tr>
                 </table>
             </div>
         </section>
 
-        <!-- Section 2.5: Voice of the Team -->
-        <section class="team-message-card">
+        <!-- Section 2.5: Voice of the Team (Parallax) -->
+        <section class="team-message-card fade-up">
             <div class="quote-mark">“</div>
-            <!-- TODO: Replace with an actual team photo if available -->
-            <img src="team_photo.jpg" alt="コザ高女子テニス部の選手たち" class="team-photo" onerror="this.style.display='none'">
             <p class="team-quote">
                 いつも私たちを応援してくださり、本当にありがとうございます。<br>
                 皆様の温かいサポートのおかげで、私たちは念願の九州インターハイへの切符を手にすることができました。<br><br>
@@ -1158,7 +1282,7 @@
         </section>
 
         <!-- Section 3: Donation Value Mapping (お気持ちの可視化) -->
-        <section class="section-card">
+        <section class="section-card fade-up">
             <h2 class="section-title">❤️ ご支援ができること（お気持ちの可視化）</h2>
             <p class="narrative-text">皆様からいただく温かいお気持ちは、以下のように選手たちの具体的なサポートへと直結します。</p>
 
@@ -1200,7 +1324,7 @@
         </section>
 
         <!-- Section 4: Main Form (The Action) -->
-        <section class="section-card" id="apply-form-section">
+        <section class="section-card fade-up" id="apply-form-section">
             <h2 class="section-title">👕 資金造成（Tシャツ購入・ご寄付）お申し込みフォーム</h2>
             <p class="narrative-text" style="margin-bottom: 25px;">
                 <span class="nobrk">支援方法を</span>以下からご選択いただき、詳細をご入力ください。
@@ -1259,19 +1383,19 @@
                 <div class="form-group"
                     style="margin-top: 40px; border-top: 1px solid var(--border); padding-top: 30px;">
                     <label class="field-label required">支援方法の選択</label>
-                    <div class="choice-grid">
+                    <div class="choice-grid" style="display: flex; flex-direction: column; gap: 16px;">
+                        <div class="choice-card" id="btn-donation" onclick="toggleSupportMethod('donation')" style="border-color: var(--accent); box-shadow: 0 4px 12px rgba(217,119,6,0.15);">
+                            <input type="checkbox" id="chk-donation" name="supportType" value="donation">
+                            <div class="choice-content">
+                                <span class="choice-title" style="color: var(--accent); font-size: 1.1rem;">❤️ ダイレクト応援プラン（寄付）</span>
+                                <span class="choice-desc">金額は問いません。いただいたご支援はそのまま全額、選手たちの遠征費になります！</span>
+                            </div>
+                        </div>
                         <div class="choice-card" id="btn-tshirt" onclick="toggleSupportMethod('tshirt')">
                             <input type="checkbox" id="chk-tshirt" name="supportType" value="tshirt">
                             <div class="choice-content">
-                                <span class="choice-title">👕 支援Tシャツを購入して支援</span>
-                                <span class="choice-desc">1枚 2,000円 / 特製デザイン</span>
-                            </div>
-                        </div>
-                        <div class="choice-card" id="btn-donation" onclick="toggleSupportMethod('donation')">
-                            <input type="checkbox" id="chk-donation" name="supportType" value="donation">
-                            <div class="choice-content">
-                                <span class="choice-title">❤️ 寄付で直接支援</span>
-                                <span class="choice-desc">金額は問いません</span>
+                                <span class="choice-title">👕 【リターンあり】Tシャツ購入で支援</span>
+                                <span class="choice-desc">1枚 2,000円 / 特製デザインのTシャツをお返しします</span>
                             </div>
                         </div>
                     </div>
@@ -1279,7 +1403,8 @@
 
                 <!-- Dynamic Section A: T-Shirt Purchase -->
                 <div id="tshirt-section" class="dynamic-section">
-                    <h3 class="section-subtitle">👕 Tシャツの種類・サイズ選択</h3>
+                    <h3 class="section-subtitle" id="form-section">👕 【支援リターン】オリジナル応援Tシャツ</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">※Tシャツ1枚のご支援で、選手たちが約1ヶ月間使用する練習用テニスボール代のサポートに繋がります。</p>
                     
                     <!-- アイビーグリーン -->
                     <h4 style="margin: 15px 0 10px; color: var(--primary-dark); font-size: 1.1rem;">■ アイビーグリーン（深緑）</h4>
@@ -1436,17 +1561,16 @@
 
                 <!-- Dynamic Section B: Donation -->
                 <div id="donation-section" class="dynamic-section">
-                    <h3 class="section-subtitle">❤️ 寄付金額のご選択</h3>
+                    <h3 class="section-subtitle">❤️ 【支援プラン】寄付金額のご選択</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">※いただいたご寄付は、全額選手たちの九州大会への遠征費用および部活動維持費として大切に活用させていただきます。</p>
 
                     <div class="donation-grid">
                         <button type="button" class="donation-btn" onclick="setDonation(500)">500円</button>
                         <button type="button" class="donation-btn" onclick="setDonation(1000)">1,000円</button>
                         <div class="donation-btn-wrapper">
-                            <span class="badge-recommend">おすすめ</span>
                             <button type="button" class="donation-btn" style="width: 100%; height: 100%;" onclick="setDonation(3000)">3,000円</button>
                         </div>
                         <div class="donation-btn-wrapper">
-                            <span class="badge-recommend">人気</span>
                             <button type="button" class="donation-btn" style="width: 100%; height: 100%;" onclick="setDonation(5000)">5,000円</button>
                         </div>
                         <button type="button" class="donation-btn" onclick="setDonation(10000)">10,000円</button>
@@ -1539,6 +1663,9 @@
         </footer>
     </div>
 
+    <!-- Floating CTA Button -->
+    <a href="#form-section" class="floating-cta">✨ プロジェクトを支援する</a>
+
     <!-- Thank you / Payment Instruction Modal -->
     <div id="thankYouModal" class="modal">
         <div class="modal-content">
@@ -1549,8 +1676,12 @@
             <div class="modal-body">
                 <p><span class="nobrk">コザ高女子テニス部一同、</span><span class="nobrk">皆様の温かいご支援に</span>心より感謝申し上げます。</p>
                 <p style="margin-top: 10px; font-weight: 500;">【お振込・送金のお願い】</p>
-                <p><span class="nobrk">大変お手数ですが、</span><span
-                        class="nobrk">6月30日（火）までに、</span>ご選択いただいた下記口座またはアカウント宛てにお手続きをお願いいたします。</p>
+                <p>
+                    <span class="nobrk">大変お手数ですが、</span>
+                    <span class="nobrk">【Tシャツ】6月17日（水）までに、</span>
+                    <span class="nobrk">【寄付のみ】6月30日（火）までに</span><br>
+                    ご選択いただいた下記口座またはアカウント宛てにお手続きをお願いいたします。
+                </p>
 
                 <div class="payment-info">
                     <!-- Bank Transfer Card -->
@@ -1787,8 +1918,18 @@
 
         // UIを更新する共通関数
         function updateProgressUI(currentAmount, supporterCount) {
+
             const targetAmount = 1000000;
             const percentage = Math.min(Math.round((currentAmount / targetAmount) * 100), 100);
+
+            // 残り日数の計算 (Tシャツの締切である6月17日を優先表示)
+            const deadline = new Date("2026-06-17T23:59:59+09:00");
+            const now = new Date();
+            const diffTime = deadline - now;
+            const diffDays = Math.max(0, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
+            const daysLeftEl = document.getElementById('stat-days-left');
+            if (daysLeftEl) daysLeftEl.innerText = diffDays + " 日";
+
 
             // 進捗ゲージと数値をリアルタイム更新
             const progressBar = document.querySelector('.progress-bar');
@@ -2007,6 +2148,21 @@
                 console.error('コピー失敗:', err);
             });
         }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        });
     </script>
 </body>
 
