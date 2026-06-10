@@ -897,6 +897,56 @@
                 padding: 36px 28px;
             }
         }
+        /* Message Board */
+        .message-board {
+            margin-top: 16px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-radius: var(--radius-md);
+            border: 1px solid #bbf7d0;
+        }
+
+        .message-board-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .message-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-height: 280px;
+            overflow-y: auto;
+            padding-right: 8px;
+        }
+
+        .message-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        .message-list::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+        .message-list::-webkit-scrollbar-thumb {
+            background: var(--primary-light);
+            border-radius: 4px;
+        }
+
+        .message-card {
+            background: white;
+            padding: 14px 18px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary);
+            word-break: auto-phrase;
+        }
 
         .modal.open .modal-content {
             transform: scale(1);
@@ -1213,6 +1263,18 @@
                     <span class="stat-label">Tシャツ締切まで</span>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- Section 1.5: Message Board (Dynamically populated) -->
+        <section class="section-card fade-up" id="message-board-section" style="display: none;">
+            <div class="message-board">
+                <div class="message-board-title">
+                    <span>💌</span> 皆様からの温かい応援メッセージ
+                </div>
+                <div class="message-list" id="message-list-container">
+                    <!-- Messages will be inserted here -->
+                </div>
             </div>
         </section>
 
@@ -1891,7 +1953,7 @@
         }
 
         // Google Apps Script Web App URL (※ジロウさんがGAS公開後に取得するURLをここに貼り付けます)
-        const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbwz4paPCcrs6VZIBP16BRQo5jJ4Zx__wRuVLV6hbIxQrYhjjZftZYr4ZtVHmb8_CWpP/exec';
+        const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbysZ2EVAjJ56loGykVqdKNeVhSHO5rYGoqi9j8M-4hfpSIY0Yj6m8-RYAhYeaupZ0SR/exec';
 
         // ページ読み込み時にリアルタイム進捗データを取得する
         async function fetchLiveProgress() {
@@ -1910,14 +1972,14 @@
                 if (!response.ok) throw new Error('進捗データの取得に失敗しました');
                 const data = await response.json();
 
-                updateProgressUI(data.amount || 0, data.supporters || 0);
+                updateProgressUI(data.amount || 0, data.supporters || 0, data.messages || []);
             } catch (error) {
                 console.error('API取得エラー:', error);
             }
         }
 
         // UIを更新する共通関数
-        function updateProgressUI(currentAmount, supporterCount) {
+        function updateProgressUI(currentAmount, supporterCount, messages = []) {
 
             const targetAmount = 1000000;
             const percentage = Math.min(Math.round((currentAmount / targetAmount) * 100), 100);
@@ -1940,6 +2002,24 @@
                 stats[0].innerText = `${currentAmount.toLocaleString()}円`;
                 stats[1].innerText = `${percentage} %`;
                 stats[2].innerText = `${supporterCount} 人`;
+            }
+
+            // メッセージボードの更新
+            const messageSection = document.getElementById('message-board-section');
+            const messageContainer = document.getElementById('message-list-container');
+            if (messageSection && messageContainer) {
+                if (messages && messages.length > 0) {
+                    messageSection.style.display = 'block';
+                    messageContainer.innerHTML = '';
+                    messages.forEach(msg => {
+                        const div = document.createElement('div');
+                        div.className = 'message-card';
+                        div.textContent = msg; // エスケープ処理
+                        messageContainer.appendChild(div);
+                    });
+                } else {
+                    messageSection.style.display = 'none';
+                }
             }
         }
 
